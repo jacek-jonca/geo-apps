@@ -98,22 +98,22 @@ midpoint = calculate_midpoint(data)
 
 # LAYING OUT THE STREAMLIT APP WITH SPECIFIC ROW ARRANGEMENT
 # Row 1: Full-width map for "All Texas"
-render_map(data, midpoint[0], midpoint[1], 7, "Geographic Midpoint", "Population: n/a")
+render_map(data, midpoint[0], midpoint[1], 7, "Geographic Midpoint of the Data", " ")
 
 # Row 2: Full-width map for "Houston"
-render_map(data, locations["Houston"][0], locations["Houston"][1], 9, "Houston", "Population: 7.5 million")
+render_map(data, locations["Houston"][0], locations["Houston"][1], 9, "Houston, ", "population: 7.5 million")
 
 # Row 3: Four equal-width maps for "Dallas," "Austin,", "San Antonio", and "Killeen"
 row3_col1, row3_col2, row3_col3, row3_col4 = st.columns(4)
 
 with row3_col1:
-    render_map(data, locations["Dallas"][0], locations["Dallas"][1], 9, "Dallas", "Population: 8.1 million")
+    render_map(data, locations["Dallas"][0], locations["Dallas"][1], 9, "Dallas, ", "population: 8.1 million")
 
 with row3_col2:
-    render_map(data, locations["San Antonio"][0], locations["San Antonio"][1], 9, "San Antonio", "Population: 2.7 million")
+    render_map(data, locations["San Antonio"][0], locations["San Antonio"][1], 9, "San Antonio, ", "population: 2.7 million")
 
 with row3_col3:
-    render_map(data, locations["Austin"][0], locations["Austin"][1], 9, "Austin", "Population: 2.5 million")
+    render_map(data, locations["Austin"][0], locations["Austin"][1], 9, "Austin, ", "population: 2.5 million")
 
 with row3_col4:
-    render_map(data, locations["Killeen"][0], locations["Killeen"][1], 9, "Killeen", "Population: 0.5 million")
+    render_map(data, locations["Killeen"][0], locations["Killeen"][1], 9, "Killeen, ", "population: 0.5 million")

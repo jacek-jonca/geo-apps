@@ -116,4 +116,4 @@ with row3_col3:
     render_map(data, locations["Austin"][0], locations["Austin"][1], 9, "Austin", "Population: 2.5 million")
 
 with row3_col4:
-    render_map(data, locations["Killeen"][0], locations["Killeen"][1], 9, "Killeen", "Population: 2.7 million")
+    render_map(data, locations["Killeen"][0], locations["Killeen"][1], 9, "Killeen", "Population: 0.5 million")

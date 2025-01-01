@@ -15,7 +15,7 @@ def load_data():
     """Load and validate the application data."""
     path = "data.csv"
     if not os.path.isfile(path):
-        path = f"https://github.com/jacek-jonca/interactive-enrollment-sources/raw/main/{path}"
+        path = f"https://github.com/jacek-jonca/geo-apps/raw/main/{path}"
 
     try:
         data = pd.read_csv(
@@ -36,7 +36,7 @@ def load_data():
 # FUNCTION FOR MAPS
 def render_map(data, lon, lat, zoom, title, population):
     """Render a map using PyDeck."""
-    st.write(f"**{title}**\n{population}")
+    st.write(f"{title} {population}")
     st.pydeck_chart(
         pdk.Deck(
             map_style="mapbox://styles/mapbox/light-v9",

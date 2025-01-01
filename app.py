@@ -34,16 +34,16 @@ def load_data():
     return data
 
 # FUNCTION FOR MAPS
-def render_map(data, lon, lat, zoom, title):
+def render_map(data, lon, lat, zoom, title, population):
     """Render a map using PyDeck."""
-    st.write(f"**{title}**")
+    st.write(f"**{title}**\n{population}")
     st.pydeck_chart(
         pdk.Deck(
             map_style="mapbox://styles/mapbox/light-v9",
             initial_view_state=pdk.ViewState(
-                longitude=-95.3701,
-                latitude=29.7601,
-                zoom=9,
+                longitude=lon,
+                latitude=lat,
+                zoom=zoom,
                 max_zoom=16,
                 pitch=45,
                 bearing=0,
@@ -98,22 +98,22 @@ midpoint = calculate_midpoint(data)
 
 # LAYING OUT THE STREAMLIT APP WITH SPECIFIC ROW ARRANGEMENT
 # Row 1: Full-width map for "All Texas"
-render_map(data, midpoint[0], midpoint[1], 7, "All Texas")
+render_map(data, midpoint[0], midpoint[1], 7, "Geographic Midpoint", "Population: n/a")
 
 # Row 2: Full-width map for "Houston"
-render_map(data, locations["Houston"][0], locations["Houston"][1], 9, "Houston")
+render_map(data, locations["Houston"][0], locations["Houston"][1], 9, "Houston", "Population: 7.5 million")
 
 # Row 3: Four equal-width maps for "Dallas," "Austin,", "San Antonio", and "Killeen"
 row3_col1, row3_col2, row3_col3, row3_col4 = st.columns(4)
 
 with row3_col1:
-    render_map(data, locations["Dallas"][0], locations["Dallas"][1], 9, "Dallas")
+    render_map(data, locations["Dallas"][0], locations["Dallas"][1], 9, "Dallas", "Population: 8.1 million")
 
 with row3_col2:
-    render_map(data, locations["Austin"][0], locations["Austin"][1], 9, "Austin")
+    render_map(data, locations["San Antonio"][0], locations["San Antonio"][1], 9, "San Antonio", "Population: 2.7 million")
 
 with row3_col3:
-    render_map(data, locations["San Antonio"][0], locations["San Antonio"][1], 9, "San Antonio")
+    render_map(data, locations["Austin"][0], locations["Austin"][1], 9, "Austin", "Population: 2.5 million")
 
 with row3_col4:
-    render_map(data, locations["Killeen"][0], locations["Killeen"][1], 9, "Killeen")
+    render_map(data, locations["Killeen"][0], locations["Killeen"][1], 9, "Killeen", "Population: 2.7 million")

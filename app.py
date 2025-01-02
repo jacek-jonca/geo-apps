@@ -91,6 +91,7 @@ locations = {
     "Austin": [-97.7405, 30.2747],
     "San Antonio": [-98.4911, 29.4243],
     "Killeen": [-97.7278, 31.1171],
+    "Beaumont": [-94.126556, 30.080173],
 }
 
 # SETTING GEOGRAPHIC MIDPOINT
@@ -116,4 +117,4 @@ with row3_col3:
     render_map(data, locations["Austin"][0], locations["Austin"][1], 9, "Austin, ", "population: 2.5 million")
 
 with row3_col4:
-    render_map(data, locations["Killeen"][0], locations["Killeen"][1], 9, "Killeen, ", "population: 0.5 million")
+    render_map(data, locations["Beaumont"][0], locations["Beaumont"][1], 9, "Beaumont, ", "population: 0.1 million")

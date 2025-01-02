@@ -1,4 +1,4 @@
-"""Displaying geospatial enrollment data."""
+"""Displaying geospatial application data."""
 
 import os
 import numpy as np
@@ -81,7 +81,7 @@ if data.shape[0] < 2:
 
 # LAYING OUT THE TOP SECTION OF THE APP
 st.title("Enrollment Sources Data")
-st.markdown("## Visualizing enrollments")
+st.markdown("## Where do the applications come from?")
 
 # DEFINE CITY LOCATIONS
 locations = {

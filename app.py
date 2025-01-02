@@ -23,7 +23,7 @@ def load_data():
             names=["lon", "lat"],
             skiprows=1,
             usecols=[0, 1],
-        )
+        ).dropna()
         if data.empty:
             st.error("Data file is empty. Please check the source.")
             st.stop()

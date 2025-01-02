@@ -98,7 +98,7 @@ midpoint = calculate_midpoint(data)
 
 # LAYING OUT THE STREAMLIT APP WITH SPECIFIC ROW ARRANGEMENT
 # Row 1: Full-width map for "All Texas"
-render_map(data, midpoint[0], midpoint[1], 7, "Geographic Midpoint of the Data", " ")
+render_map(data, midpoint[0], midpoint[1], 9, "Geographic Midpoint of the Data", " ")
 
 # Row 2: Full-width map for "Houston"
 render_map(data, locations["Houston"][0], locations["Houston"][1], 9, "Houston, ", "population: 7.5 million")
